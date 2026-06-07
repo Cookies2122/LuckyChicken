@@ -1,0 +1,142 @@
+"Phrases"
+{
+	// Поддерживаемые цвета:
+	// {DEFAULT}, {RED}, {GREEN}, {LIME}, {LIGHTGREEN}, {LIGHTRED},
+	// {LIGHTPURPLE}, {PURPLE}, {LIGHTBLUE}, {BLUE}, {GRAYBLUE},
+	// {GRAY}, {OLIVE}, {LIGHTOLIVE}
+
+	"language"  "ru"
+
+	"Chat_Prefix"
+	{
+		"en"		" {DEFAULT}[{LIGHTGREEN}LuckyChicken{DEFAULT}]"
+		"ru"		" {DEFAULT}[{LIGHTGREEN}LuckyChicken{DEFAULT}]"
+	}
+
+	"Lucky_Chicken_Kill"
+	{
+		"en"		"You got {LIGHTGREEN}%d{DEFAULT} credits for a {LIGHTGREEN}lucky{DEFAULT} chicken."
+		"ru"		"Ты получил {LIGHTGREEN}%d{DEFAULT} кредитов за {LIGHTGREEN}счастливую{DEFAULT} курицу."
+	}
+
+	"Lucky_Chicken_Kill_All"
+	{
+		"en"		"{LIGHTGREEN}%s{DEFAULT} got {LIGHTGREEN}%d{DEFAULT} credits for a {LIGHTGREEN}lucky{DEFAULT} chicken."
+		"ru"		"{LIGHTGREEN}%s{DEFAULT} получил {LIGHTGREEN}%d{DEFAULT} кредитов за {LIGHTGREEN}счастливую{DEFAULT} курицу."
+	}
+
+	"Unlucky_Chicken_Kill"
+	{
+		"en"		"You killed a {LIGHTRED}sad{DEFAULT} chicken {LIGHTRED}-%d HP{DEFAULT}."
+		"ru"		"Ты убил {LIGHTRED}несчастную{DEFAULT} курицу {LIGHTRED}-%d HP{DEFAULT}."
+	}
+
+	"Unlucky_Chicken_Kill_NoDamage"
+	{
+		"en"		"You killed a {LIGHTRED}sad{DEFAULT} chicken."
+		"ru"		"Ты убил {LIGHTRED}несчастную{DEFAULT} курицу."
+	}
+
+	"Min_Players_Required"
+	{
+		"en"		"Minimum {LIGHTGREEN}%d{DEFAULT} players required."
+		"ru"		"Нужно минимум {LIGHTGREEN}%d{DEFAULT} игроков."
+	}
+
+	// Главное меню
+	"Menu_Main_Title"
+	{
+		"en"		"Chickens | live: %d"
+		"ru"		"Курицы | живых: %d"
+	}
+	"Menu_My_Stats"
+	{
+		"en"		"My stats"
+		"ru"		"Моя статистика"
+	}
+	"Menu_Top_Lucky"
+	{
+		"en"		"Top: lucky"
+		"ru"		"Топ: счастливые"
+	}
+	"Menu_Top_Unlucky"
+	{
+		"en"		"Top: unlucky"
+		"ru"		"Топ: несчастные"
+	}
+	"Menu_Top_Money"
+	{
+		"en"		"Top: earnings"
+		"ru"		"Топ: заработок"
+	}
+	"Menu_Online_Stats"
+	{
+		"en"		"Online players"
+		"ru"		"Онлайн игроки"
+	}
+
+	// Подменю «Моя статистика»
+	"Menu_PersonalStats_Title"
+	{
+		"en"		"My stats"
+		"ru"		"Моя статистика"
+	}
+	"Menu_PersonalStats_Lucky"
+	{
+		"en"		"Lucky: %d"
+		"ru"		"Счастливых: %d"
+	}
+	"Menu_PersonalStats_Unlucky"
+	{
+		"en"		"Unlucky: %d"
+		"ru"		"Несчастных: %d"
+	}
+	"Menu_PersonalStats_Earned"
+	{
+		"en"		"Earned: %d"
+		"ru"		"Заработано: %d"
+	}
+
+	// Подменю топов
+	"Menu_TopLucky_Title"
+	{
+		"en"		"Top: lucky"
+		"ru"		"Топ: счастливые"
+	}
+	"Menu_TopUnlucky_Title"
+	{
+		"en"		"Top: unlucky"
+		"ru"		"Топ: несчастные"
+	}
+	"Menu_TopMoney_Title"
+	{
+		"en"		"Top: earnings"
+		"ru"		"Топ: заработок"
+	}
+	"Menu_Online_Title"
+	{
+		"en"		"Online players"
+		"ru"		"Онлайн игроки"
+	}
+
+	"Menu_Top_Entry"
+	{
+		"en"		"%d. %s — %d"
+		"ru"		"%d. %s — %d"
+	}
+	"Menu_Top_Empty"
+	{
+		"en"		"No data yet"
+		"ru"		"Данных пока нет"
+	}
+	"Menu_DB_Loading"
+	{
+		"en"		"Loading..."
+		"ru"		"Загрузка..."
+	}
+	"Menu_DB_NotConnected"
+	{
+		"en"		"DB not connected"
+		"ru"		"БД не подключена"
+	}
+}
