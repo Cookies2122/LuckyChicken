@@ -2,7 +2,6 @@
 #define _INCLUDE_LUCKYCHICKEN_PLUGIN_H_
 
 #include <ISmmPlugin.h>
-#include <sh_vector.h>
 #include "utlvector.h"
 #include "ehandle.h"
 #include <iserver.h>
@@ -13,12 +12,14 @@
 #include <deque>
 #include <functional>
 #include <utlstring.h>
-#include <KeyValues.h>
+#include <keyvalues.h>
 #include "CCSPlayerController.h"
 #include "CCSPlayerPawn.h"
 #include "CChicken.h"
 #include "entitykeyvalues.h"
 #include "include/menus.h"
+#include "include/utils.h"
+#include "include/players.h"
 #include "include/shop.h"
 #include "include/sql_mm.h"
 #include "include/mysql_mm.h"
@@ -40,4 +41,4 @@ private:
     const char* GetLogTag();
 };
 
-#endif // _INCLUDE_LUCKYCHICKEN_PLUGIN_H_
+#endif

@@ -1,4 +1,3 @@
-# vim: set sts=2 ts=8 sw=2 tw=99 et ft=python:
 import os
 
 for sdk_target in MMSPlugin.sdk_targets:
@@ -7,10 +6,6 @@ for sdk_target in MMSPlugin.sdk_targets:
 
   cxx.cxxflags += ['-Wno-invalid-offsetof']
   binary = MMSPlugin.HL2Library(builder, cxx, MMSPlugin.plugin_name, sdk)
-
-  binary.custom = [builder.tools.Protoc(protoc = sdk_target.protoc, sources = [
-    os.path.join(sdk['path'], 'common', 'network_connection.proto')
-  ])]
 
   binary.compiler.cxxincludes += [
     os.path.join(builder.sourcePath, 'include'),
@@ -23,7 +18,5 @@ for sdk_target in MMSPlugin.sdk_targets:
     os.path.join('..', 'SchemaEntity', 'module.cpp'),
   ]
 
-  if cxx.target.arch == 'x86':
-    binary.sources += ['sourcehook/sourcehook_hookmangen.cpp']
   nodes = builder.Add(binary)
   MMSPlugin.binaries += [nodes]

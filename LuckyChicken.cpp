@@ -820,15 +820,11 @@ static void Boot()
     DbConnect();
 }
 
-CGameEntitySystem* GameEntitySystem()
-{
-    return g_pUtils ? g_pUtils->GetCGameEntitySystem() : nullptr;
-}
-
 bool LuckyChicken::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late)
 {
     PLUGIN_SAVEVARS();
     GET_V_IFACE_CURRENT(GetEngineFactory, g_pCVar, ICvar, CVAR_INTERFACE_VERSION);
+    GET_V_IFACE_ANY(GetEngineFactory, g_pGameResourceServiceServer, IGameResourceService, GAMERESOURCESERVICESERVER_INTERFACE_VERSION);
     GET_V_IFACE_ANY(GetEngineFactory, g_pSchemaSystem, ISchemaSystem, SCHEMASYSTEM_INTERFACE_VERSION);
     GET_V_IFACE_CURRENT(GetEngineFactory, engine, IVEngineServer2, SOURCE2ENGINETOSERVER_INTERFACE_VERSION);
     GET_V_IFACE_CURRENT(GetFileSystemFactory, g_pFullFileSystem, IFileSystem, FILESYSTEM_INTERFACE_VERSION);
@@ -842,6 +838,9 @@ bool LuckyChicken::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, 
 
 bool LuckyChicken::Unload(char* error, size_t maxlen)
 {
+    int ret;
+    if (!g_SMAPI->MetaFactory(UTILS_INTERFACE, &ret, nullptr)) g_pUtils = nullptr;
+    if (!g_SMAPI->MetaFactory(SQLMM_INTERFACE, &ret, nullptr)) g_pDB = nullptr;
     ConVar_Unregister();
     if (g_pUtils) { Wipeout(); g_pUtils->ClearAllHooks(g_PLID); }
     if (g_pDB) { g_pDB->Destroy(); g_pDB = nullptr; }
@@ -852,7 +851,7 @@ void LuckyChicken::AllPluginsLoaded()
 {
     char err[64]; int ret = 0;
 
-    g_pUtils = (IUtilsApi*)g_SMAPI->MetaFactory(Utils_INTERFACE, &ret, nullptr);
+    g_pUtils = (IUtilsApi*)g_SMAPI->MetaFactory(UTILS_INTERFACE, &ret, nullptr);
     if (ret == META_IFACE_FAILED || !g_pUtils)
     {
         g_SMAPI->Format(err, sizeof(err), "Missing Utils API");
@@ -870,7 +869,7 @@ void LuckyChicken::AllPluginsLoaded()
         return;
     }
 
-    g_pMenus = (IMenusApi*)g_SMAPI->MetaFactory(Menus_INTERFACE, &ret, nullptr);
+    g_pMenus = (IMenusApi*)g_SMAPI->MetaFactory(MENUS_INTERFACE, &ret, nullptr);
     if (ret == META_IFACE_FAILED) g_pMenus = nullptr;
 
     g_pShop = (IShopApi*)g_SMAPI->MetaFactory(SHOP_INTERFACE, &ret, nullptr);
